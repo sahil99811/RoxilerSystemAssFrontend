@@ -26,6 +26,10 @@ export default function AddUser() {
         toast.error("All field are required");
         return;
       }
+      if(formdata.name.length<8){
+        toast.error("name length should greater than 8");
+        return;
+      }
       if (!/^[a-zA-Z\s]+$/.test(formdata.name)) {
         toast.error("Invalid Name");
         return

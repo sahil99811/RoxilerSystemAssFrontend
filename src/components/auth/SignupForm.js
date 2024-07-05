@@ -31,7 +31,10 @@ export default function SignupForm() {
       toast.error("Please Fill All Fields");
       return;
     }
-    
+    if(formData.name.length<8){
+      toast.error("name length should greater than 8");
+      return;
+    }
     else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
        toast.error("Invalid Name");
        return
