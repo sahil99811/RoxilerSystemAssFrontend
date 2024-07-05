@@ -38,9 +38,7 @@ export default function LoginForm() {
     <>
     {
       loading&&(
-        <div style={{ "position": "absolute", "marginTop": "-1.5rem", "fontSize": "2rem" }} className='absolute mt-[-4] text-xl'>
-           Loading...
-        </div>
+        toast.success("loading... taking some time on first time")
       )
     }
     <div className="max-w-screen-lg mx-auto p-6">
