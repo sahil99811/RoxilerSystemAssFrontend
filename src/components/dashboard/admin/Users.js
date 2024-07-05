@@ -3,10 +3,11 @@ import SeachBar from '../common/SearchBar'
 import {getAllUsers} from '../../../apis/Auth'
 
 import { useSelector } from 'react-redux'
+import { getAverageRating } from '../../../utility/AverageRating'
 export default function Users() {
   const [users,setUsers]=useState([])
   const {token}=useSelector(state=>state.auth)
-
+  console.log(users);
   const setUsersData=(data)=>{
     setUsers(data);
   }
@@ -14,7 +15,7 @@ export default function Users() {
     <div className='flex flex-col gap-4'>
         <SeachBar setData={setUsersData} userType="admin"/>
         <div className='w-[100%] mx-auto'>
-        <div className="w-full h-2/3 flex flex-col overflow-y-scroll overflow-x-hidden">
+          <div className="w-full h-2/3 flex flex-col overflow-y-scroll overflow-x-hidden">
             {users?.length !== 0 && (
               <table className="mx-auto my-0.5 w-[95%] max-w-4xl overflow-y-scroll overflow-x-hidden border-collapse text-center">
                 <thead className="bg-blue-600 text-white font-poppins text-sm font-semibold">
@@ -35,7 +36,7 @@ export default function Users() {
                       <td className="py-2 text-black font-poppins text-sm font-semibold">{user.address}</td>
                       <td className="py-2 text-black font-poppins text-sm font-semibold">{user.email}</td>
                       <td className="py-2 text-black font-poppins text-sm font-semibold">{user.role}</td>
-                      <td className="py-2 flex gap-2.5 justify-center"></td>
+                      <td className="py-2 flex gap-2.5 justify-center">{user.store?(user?.store?.ratings.length===0?user.store.rating:getAverageRating(user?.store?.ratings)):"Not Specified"}</td>
                     </tr>
                   ))}
                 </tbody>
