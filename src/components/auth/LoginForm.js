@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 export default function LoginForm() {
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  const [loading,setloading]=useState(false)
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -24,14 +25,24 @@ export default function LoginForm() {
 
   const submitHandler = async (event) => {
     event.preventDefault();
+    setloading(true);
     if (!formData.email || !formData.password) {
       toast.error("All fields are required");
       return;
     }
     await login(formData, dispatch);
+    setloading(false);
   };
-
+  
   return (
+    <>
+    {
+      loading&&(
+        <div style={{ "position": "absolute", "marginTop": "-1.5rem", "fontSize": "2rem" }} className='absolute mt-[-4] text-xl'>
+           Loading...
+        </div>
+      )
+    }
     <div className="max-w-screen-lg mx-auto p-6">
       <h2 className="text-gray-700 font-semibold text-lg">Login</h2>
       <div className="mt-6 space-y-4">
@@ -73,5 +84,6 @@ export default function LoginForm() {
         Log in
       </button>
     </div>
+    </>
   );
 }
