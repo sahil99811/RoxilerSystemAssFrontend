@@ -1,70 +1,95 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Frontend
 
-## Available Scripts
+This web application allows users to submit ratings for stores registered on the platform, using a simple and intuitive interface. Users can rate stores on a scale of 1 to 5, helping to maintain quality and customer satisfaction.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+**Client:** React js, Redux, TailwindCSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Server:** Node js, Express js,Mongodb,Razorpay
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authors
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [@Sahil Patel](https://www.github.com/sahil99811)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## start project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To start this project run
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+### Key Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### User Personas (Roles):
+- **System Admin**
+- **Normal User**
+- **Store Owner**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### General Functionalities:
+- **Single Login:** One login page for all types of users, displaying functionalities based on the user's role after login.
+- **Signup Page:** Available for normal users to register on the platform.
 
-### Code Splitting
+#### System Admin Functionalities:
+- **User and Store Management:**
+  - Add stores, normal users, and admin users to the system.
+  - View and manage all registered stores and users.
+  - **Listings include:**
+    - Users: Name, Email, Address, Role.
+    - Stores: Name, Email, Address, Rating.
+- **Dashboard:**
+  - Total Users.
+  - Total Stores.
+  - Total Users Submitted Rating.
+- **User Addition Form:** Fields include Name, Email, Password, Address.
+- **Filtering and Sorting:** Apply filters and sorting (ascending/descending) on fields such as Name, Email, Address, and Role.
+- **User Details:** View detailed information for all types of users, including ratings for Store Owners.
+- **Logout:** Option to log out of the system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Normal User Functionalities:
+- **Signup and Login:** Users can register and log in to the platform.
+  - **Signup Form Fields:** Name, Email, Address, Password.
+- **Password Management:** Option to change the password after login.
+- **Store Listings:** View the list of all registered stores with details:
+  - Name
+  - Address
+  - Overall Ratings
+  - My Submitted Rating
+- **Store Search:** Search stores based on Name and Address.
+- **Rating Submission:** Submit ratings between 1 to 5 for individual stores.
+- **Rating Modification:** Option to modify submitted ratings.
+- **Logout:** Option to log out of the system.
 
-### Analyzing the Bundle Size
+#### Store Owner Functionalities:
+- Login and Password Management:
+Log in and change the password after login.
+- Dashboard:
+  - List of users who have submitted ratings to the store.
+  - Average total submitted ratings for the store.
+- Logout: Option to log out of the system.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Demo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Insert gif or link to demo
 
-### Advanced Configuration
+https://roxiler-system-ass-frontend-nxpjj7olp.vercel.app/
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Install my-project with npm
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm install my-project
+  cd my-project
+```
+    
