@@ -26,11 +26,13 @@ export default function SignupForm() {
 
   const submitHandler = async (event) => {
     event.preventDefault();
+
     if (!formData.name || !formData.email || !formData.password || !formData.address) {
       toast.error("Please Fill All Fields");
       return;
     }
-    if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
+    
+    else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
        toast.error("Invalid Name");
        return
     }
@@ -46,6 +48,7 @@ export default function SignupForm() {
       toast.error("Address length must be greater than 40 character and less 400 character");
       return
     }
+    
     const res=await signup(formData);
     if(res){
       setFormData({

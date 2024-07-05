@@ -34,7 +34,7 @@ export default function AddUser() {
         toast.error("Invalid Email");
         return
      }
-     else if(/^[a-z]+$/.test(formdata.password) ||/^[A-Z]+$/.test(formdata.password) || /^\d+$/.test(formdata.password) || formdata.password.length < 8  ){
+     else if(/^[a-z]+$/.test(formdata.password) ||/^[A-Z]+$/.test(formdata.password) || /^\d+$/.test(formdata.password) || formdata.password.length < 8  ||formdata.password.length > 20 ){
        toast.error("Weak Password!!,Password must contain at least 1 capital letter, 1 small letter, 1 numeric value, and be longer than 6 characters");
        return;
      }

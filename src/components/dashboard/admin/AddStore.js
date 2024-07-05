@@ -29,6 +29,10 @@ export default function AddStore() {
         toast.error("Rating value shoulbe 0 to 5");
         return;
       }
+      if(formdata.name.length<8||formdata.name.length>20){
+        toast.error("Name length should be 20 to 60");
+        return; 
+      }
       if (!/^[a-zA-Z\s]+$/.test(formdata.name)) {
          toast.error("Invalid Name");
          return
